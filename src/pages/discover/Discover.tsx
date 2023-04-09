@@ -3,10 +3,11 @@
  */
 
 import { memo } from 'react'
+import NavBar from './components/NavBar'
 const Discover = () => {
   return (
     <div>
-      <div>导航</div>
+      <NavBar />
     </div>
   )
 }

@@ -12,5 +12,11 @@ module.exports = {
   //TODO 禁止tailwindcss的默认属性
   corePlugins: {
     preflight: false
-  }
+  },
+  presets: [
+    require('tailwindcss-rem2px-preset').createPreset({
+      fontSize: 100,
+      unit: 'rem'
+    })
+  ]
 }
