@@ -1,6 +1,12 @@
 import axios, { AxiosRequestConfig } from 'axios'
 import { useCallback } from 'react'
 
+declare module 'axios' {
+  interface AxiosInstance {
+    (config: AxiosRequestConfig): Promise<any>
+  }
+}
+
 const instance = axios.create({
   timeout: 2000,
   baseURL: '/api/',
@@ -30,10 +36,10 @@ instance.interceptors.request.use(
 
 // 添加响应拦截器
 instance.interceptors.response.use(
-  ({ data }) => {
+  (res) => {
     // 2xx 范围内的状态码都会触发该函数。
     // 对响应数据做点什么
-    return data
+    return res.data
   },
   (error) => {
     // 超出 2xx 范围的状态码都会触发该函数。

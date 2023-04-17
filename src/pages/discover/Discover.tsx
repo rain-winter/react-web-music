@@ -2,12 +2,16 @@
  * 发现
  */
 
+import { useMount } from '@/hook'
 import { memo } from 'react'
-import NavBar from './components/NavBar'
+import { Outlet, useNavigate } from 'react-router'
 const Discover = () => {
+  const navigate = useNavigate()
+  useMount(() => navigate('/discover/recommend'))
+
   return (
     <div>
-      <NavBar />
+      <Outlet />
     </div>
   )
 }
