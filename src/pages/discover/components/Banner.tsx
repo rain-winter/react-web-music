@@ -1,4 +1,4 @@
-import { useBanner } from '@/hook/banner'
+import { useBanner } from '@/hook/recommend'
 import { Carousel } from 'antd'
 import { ElementRef, useRef, useState } from 'react'
 
